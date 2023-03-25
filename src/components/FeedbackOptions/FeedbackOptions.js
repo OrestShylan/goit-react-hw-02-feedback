@@ -1,5 +1,7 @@
+import css from './Feedback.module.css';
+
 export const FeedbackOptions = ({ onIncrement }) => (
-  <ul>
+  <ul className={css.feedback}>
     <li>
       <button
         value="good"
