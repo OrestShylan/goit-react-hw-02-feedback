@@ -1,13 +1,37 @@
-export const FeedbackOptions = ({ onClickBtn }) => (
+export const FeedbackOptions = ({ onIncrement }) => (
   <ul>
     <li>
-      <button onClick={() => onClickBtn('good')}> Good </button>
+      <button
+        value="good"
+        name="good"
+        onClick={() => {
+          onIncrement('good');
+        }}
+      >
+        Good
+      </button>
     </li>
     <li>
-      <button onClick={() => onClickBtn('bad')}> Bad </button>
+      <button
+        value="bad"
+        name="bad"
+        onClick={() => {
+          onIncrement('bad');
+        }}
+      >
+        Bad
+      </button>
     </li>
     <li>
-      <button onClick={() => onClickBtn('netural')}> Neutural </button>
+      <button
+        value="netural"
+        name="neutral"
+        onClick={() => {
+          onIncrement('neutral');
+        }}
+      >
+        Neutural
+      </button>
     </li>
   </ul>
 );

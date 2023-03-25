@@ -8,16 +8,25 @@ export class App extends Component {
     neutral: 0,
     bad: 0,
   };
-  hendelClick(e) {
-    console.log(e);
-  }
+  // hendelClick(evt) {
+  //   const { value } = evt.target;
+  //   // this.setState({ [name]: value });
+  //   this.setState(prevState => ({
+  //     [value]: prevState[value] + 1,
+  //   }));
+  // }
+  onIncrement = select => {
+    this.setState(prevState => ({
+      [select]: prevState[select] + 1,
+    }));
+  };
   render() {
     return (
       <>
-        <FeedbackOptions onClickBtn={this.hendelClick} />
+        <FeedbackOptions onIncrement={this.onIncrement} />
         <Statistics
           good={this.state.good}
-          netural={this.state.neutral}
+          neutral={this.state.neutral}
           bad={this.state.bad}
         />
       </>
