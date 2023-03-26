@@ -1,4 +1,5 @@
 import css from './Feedback.module.css';
+import PropTypes from 'prop-types';
 
 export const FeedbackOptions = ({ onIncrement }) => (
   <ul className={css.feedback}>
@@ -37,3 +38,7 @@ export const FeedbackOptions = ({ onIncrement }) => (
     </li>
   </ul>
 );
+
+FeedbackOptions.propTypes = {
+  onIncrement: PropTypes.func.isRequired,
+};
