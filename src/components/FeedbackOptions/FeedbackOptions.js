@@ -1,41 +1,19 @@
 import css from './Feedback.module.css';
 import PropTypes from 'prop-types';
 
-export const FeedbackOptions = ({ onIncrement }) => (
+export const FeedbackOptions = ({ options, onIncrement }) => (
   <ul className={css.feedback}>
-    <li>
-      <button
-        value="good"
-        name="good"
-        onClick={() => {
-          onIncrement('good');
-        }}
-      >
-        Good
-      </button>
-    </li>
-    <li>
-      <button
-        value="bad"
-        name="bad"
-        onClick={() => {
-          onIncrement('bad');
-        }}
-      >
-        Bad
-      </button>
-    </li>
-    <li>
-      <button
-        value="netural"
-        name="neutral"
-        onClick={() => {
-          onIncrement('neutral');
-        }}
-      >
-        Neutural
-      </button>
-    </li>
+    {options.map(option => (
+      <li key={option}>
+        <button
+          onClick={() => {
+            onIncrement(option);
+          }}
+        >
+          {option}
+        </button>
+      </li>
+    ))}
   </ul>
 );
 
